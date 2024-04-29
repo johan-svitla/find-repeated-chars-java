@@ -1,4 +1,7 @@
+import java.util.LinkedHashSet;
+
 public class Main {
+
   public static void main(String[] args) {
     // Test cases
     String input1 = "banana";
@@ -10,7 +13,15 @@ public class Main {
     System.out.println("Input: " + input3 + ", Unique characters: " + uniqueCharacters(input3));
   }
   public static String uniqueCharacters(String input) {
-    return "!";
+    String solution = "";
+    LinkedHashSet<String> uniqueChars = new LinkedHashSet<>();
+    for(char c : input.toCharArray()){
+      uniqueChars.add(String.valueOf(c));
+    }
+
+    solution = uniqueChars.toString().replace("[","").replace("]", "").replace(",","").replace(" ", "");
+
+    return solution;
   }
 
 }
